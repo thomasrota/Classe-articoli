@@ -196,7 +196,7 @@
 			// 
 			this.labelAnnoScadenza.AutoSize = true;
 			this.labelAnnoScadenza.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelAnnoScadenza.Location = new System.Drawing.Point(341, 333);
+			this.labelAnnoScadenza.Location = new System.Drawing.Point(341, 286);
 			this.labelAnnoScadenza.Name = "labelAnnoScadenza";
 			this.labelAnnoScadenza.Size = new System.Drawing.Size(294, 29);
 			this.labelAnnoScadenza.TabIndex = 14;
@@ -205,7 +205,7 @@
 			// 
 			// textBoxAnnoScadenza
 			// 
-			this.textBoxAnnoScadenza.Location = new System.Drawing.Point(346, 379);
+			this.textBoxAnnoScadenza.Location = new System.Drawing.Point(346, 333);
 			this.textBoxAnnoScadenza.Name = "textBoxAnnoScadenza";
 			this.textBoxAnnoScadenza.Size = new System.Drawing.Size(289, 22);
 			this.textBoxAnnoScadenza.TabIndex = 13;
@@ -215,7 +215,7 @@
 			// 
 			this.labelCons.AutoSize = true;
 			this.labelCons.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelCons.Location = new System.Drawing.Point(341, 333);
+			this.labelCons.Location = new System.Drawing.Point(341, 375);
 			this.labelCons.Name = "labelCons";
 			this.labelCons.Size = new System.Drawing.Size(258, 29);
 			this.labelCons.TabIndex = 15;
@@ -224,7 +224,7 @@
 			// 
 			// textBoxGCons
 			// 
-			this.textBoxGCons.Location = new System.Drawing.Point(346, 379);
+			this.textBoxGCons.Location = new System.Drawing.Point(346, 426);
 			this.textBoxGCons.Name = "textBoxGCons";
 			this.textBoxGCons.Size = new System.Drawing.Size(253, 22);
 			this.textBoxGCons.TabIndex = 16;

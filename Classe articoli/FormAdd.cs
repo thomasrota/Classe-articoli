@@ -24,12 +24,17 @@ namespace Classe_articoli
 
 		private void buttonAggiungi_Click(object sender, EventArgs e)
 		{
-			Articolo[] articoli = new Articolo[100];
-			Articolo nuovoArticolo = CreaArticolo(Selection());
-			articoli[dim] = nuovoArticolo;
-			Visualizza(articoli);
-			dim++;
-			ClearRadioButtons();
+			if (dim < 100)
+			{
+				Articolo[] articoli = new Articolo[100];
+				Articolo nuovoArticolo = CreaArticolo(Selection());
+				articoli[dim] = nuovoArticolo;
+				Visualizza(articoli);
+				dim++;
+				ClearRadioButtons();
+			}
+			if (dim > 100)
+				throw new Exception("Limite massimo prodotti raggiunto");
 		}
 
 		private void radioButtonAlimentare_CheckedChanged(object sender, EventArgs e)
@@ -96,12 +101,15 @@ namespace Classe_articoli
 
 		private void Visualizza(Articolo[] array)
 		{
-			ListViewItem newItem = new ListViewItem();
-			newItem.Text = array[dim].Codice;
-			newItem.SubItems.Add(array[dim].Descrizione);
-			newItem.SubItems.Add(array[dim].Prezzo.ToString());
-			newItem.SubItems.Add(GetTipoArticolo(array[dim]));
-			listViewArticoli.Items.Add(newItem);
+			if (dim < 100)
+			{
+				ListViewItem newItem = new ListViewItem();
+				newItem.Text = array[dim].Codice;
+				newItem.SubItems.Add(array[dim].Descrizione);
+				newItem.SubItems.Add(array[dim].Prezzo.ToString());
+				newItem.SubItems.Add(GetTipoArticolo(array[dim]));
+				listViewArticoli.Items.Add(newItem);
+			}
 		}
 
 		private string GetTipoArticolo(Articolo articolo)
@@ -124,6 +132,7 @@ namespace Classe_articoli
 		{
 			if (radioButtonAlimentare.Checked)
 			{
+				textBoxAnnoScadenza.Text = string.Empty;
 				labelCons.Visible = false;
 				textBoxGCons.Visible = false;
 				labelAnnoScadenza.Visible = true;
@@ -132,8 +141,10 @@ namespace Classe_articoli
 
 			if (radioButtonAlimentareFresco.Checked)
 			{
-				labelAnnoScadenza.Visible = false;
-				textBoxAnnoScadenza.Visible = false;
+				labelAnnoScadenza.Visible = true;
+				textBoxAnnoScadenza.Visible = true;
+				textBoxAnnoScadenza.Text = DateTime.Now.Year.ToString();
+				textBoxAnnoScadenza.Enabled = false;
 				labelCons.Visible = true;
 				textBoxGCons.Visible = true;
 			}

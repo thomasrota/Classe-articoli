@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,9 +41,6 @@ namespace Classe_articoli
 
 		public ArticoloAlimentare(string codice, string descrizione, double prezzo, int scad) : base(codice, descrizione, prezzo)
 		{
-			Codice = codice;
-			Descrizione = descrizione;
-			Prezzo = prezzo;
 			AnnoScadenza = scad;
 		}
 
@@ -51,7 +49,7 @@ namespace Classe_articoli
 			get { return annoScadenza; }
 			set
 			{
-				if (value <= DateTime.Now.Year)
+				if (value < DateTime.Now.Year)
 					throw new Exception("Anno scadenza non valido");
 				annoScadenza = value;
 			}
@@ -93,7 +91,7 @@ namespace Classe_articoli
 	{
 		private int consumazioneDopoApertura;
 
-		public ArticoloAlimentareFresco (string codice, string descrizione, double prezzo, int consum) : base(codice, descrizione, prezzo, 0)
+		public ArticoloAlimentareFresco (string codice, string descrizione, double prezzo, int consum) : base(codice, descrizione, prezzo, DateTime.Now.Year)
 		{
 			ConsumazioneDopoApertura = consum;
 		}

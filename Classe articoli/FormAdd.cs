@@ -14,17 +14,18 @@ namespace Classe_articoli
 {
 	public partial class FormAdd : Form
 	{
-		public string path, pathTEMP;
 		public int dim;
 		public bool isRiciclabile;
 		public bool fidelityCard;
+		public Articolo[] articoli;
+		public double[] sconti;
 
 		public FormAdd()
 		{
 			InitializeComponent();
 			InitializeListView();
-			path = @"Lista.csv";
-			pathTEMP = @"ListaTEMP.csv";
+			articoli = new Articolo[100];
+			sconti = new double[100];
 			dim = 0;
 		}
 
@@ -32,7 +33,6 @@ namespace Classe_articoli
 		{
 			if (dim < 100)
 			{
-				Articolo[] articoli = new Articolo[100];
 				Articolo nuovoArticolo = CreaArticolo(Selection());
 				articoli[dim] = nuovoArticolo;
 				Visualizza(articoli);
@@ -77,10 +77,19 @@ namespace Classe_articoli
 				fidelityCard = true;
 			else
 				fidelityCard = false;
-			/*foreach (Articolo articolo in articoli)
+			int cont = 0;
+			double sum = 0;
+			foreach (Articolo articolo in articoli)
 			{
-				articolo.Sconto(fidelityCard);
-			}*/
+				if (articolo != null)
+				{
+					string[] c = articolo.ToString();
+					sconti[cont] = articolo.Sconto(fidelityCard);
+					sum += double.Parse(c[6]);
+					cont++;
+				}
+			}
+			MessageBox.Show("Importo totale: " + sum);
 		}
 
 		// Metodo per creare un nuovo oggetto Articolo in base al tipo specificato

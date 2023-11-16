@@ -17,6 +17,7 @@ namespace Classe_articoli
 		public string Codice { get; set; }
 		public string Descrizione { get; set; }
 		public double Prezzo { get; set; }
+
 		public double ImportoScontato { get; set; }
 
 		public Articolo(string codice, string descrizione, double prezzo)
@@ -29,9 +30,9 @@ namespace Classe_articoli
 		public virtual double Sconto(bool cartaFedelta)
 		{
 			if (cartaFedelta)
-			{
 				ImportoScontato = Prezzo * 0.95;
-			}
+			else
+				ImportoScontato = Prezzo;
 			return ImportoScontato;
 		}
 

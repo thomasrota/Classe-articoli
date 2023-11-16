@@ -13,11 +13,11 @@ namespace Classe_articoli
 		protected string codice;
 		protected string descrizione;
 		protected double prezzo;
+		protected double importoScontato;
 		public string Codice { get; set; }
 		public string Descrizione { get; set; }
 		public double Prezzo { get; set; }
 		public double ImportoScontato { get; set; }
-		public double ImportoTotale { get; set; }
 
 		public Articolo(string codice, string descrizione, double prezzo)
 		{
@@ -26,12 +26,18 @@ namespace Classe_articoli
 			Prezzo = prezzo;
 		}
 
-		public virtual void Sconto(bool cartaFedelta)
+		public virtual double Sconto(bool cartaFedelta)
 		{
 			if (cartaFedelta)
 			{
-				Prezzo *= 0.95;
+				ImportoScontato = Prezzo * 0.95;
 			}
+			return ImportoScontato;
+		}
+
+		public virtual string[] ToString()
+		{
+			return new string[] { Codice, Descrizione, Prezzo.ToString(), "-", "-", "-", ImportoScontato.ToString() };
 		}
 	}
 
@@ -55,14 +61,19 @@ namespace Classe_articoli
 			}
 		}
 
-		public override void Sconto(bool cartaFedelta)
+		public override double Sconto(bool cartaFedelta)
 		{
 			if (cartaFedelta && AnnoScadenza == DateTime.Now.Year)
-				Prezzo *= 0.75;
+				ImportoScontato = Prezzo * 0.75;
 			else if (AnnoScadenza == DateTime.Now.Year)
-				Prezzo *= 0.80;
+				ImportoScontato = Prezzo * 0.80;
 			else
 				base.Sconto(cartaFedelta);
+			return ImportoScontato;
+		}
+		public override string[] ToString()
+		{
+			return new string[] { Codice, Descrizione, Prezzo.ToString(), AnnoScadenza.ToString(), "-", "-", ImportoScontato.ToString() };
 		}
 	}
 
@@ -76,14 +87,19 @@ namespace Classe_articoli
 		}
 
 		public bool Riciclabile { get; set; }
-		public override void Sconto(bool cartaFedelta)
+		public override double Sconto(bool cartaFedelta)
 		{
 			if (cartaFedelta && Riciclabile)
-				Prezzo *= 0.85;
+				ImportoScontato = Prezzo * 0.85;
 			else if (Riciclabile)
-				Prezzo *= 0.90;
+				ImportoScontato = Prezzo * 0.90;
 			else
 				base.Sconto(cartaFedelta);
+			return ImportoScontato;
+		}
+		public override string[] ToString()
+		{
+			return new string[] { Codice, Descrizione, Prezzo.ToString(), "-", (Riciclabile == true) ? "Sì" : "No", "-", ImportoScontato.ToString() };
 		}
 	}
 
@@ -108,14 +124,19 @@ namespace Classe_articoli
 			}
 		}
 
-		public override void Sconto(bool cartaFedelta)
+		public override double Sconto(bool cartaFedelta)
 		{
 			if (cartaFedelta && ConsumazioneDopoApertura > 0)
-				Prezzo *= 0.95 - (0.1 / ConsumazioneDopoApertura);
+				ImportoScontato = Prezzo * 0.95 - (0.1 / ConsumazioneDopoApertura);
 			else if (ConsumazioneDopoApertura > 0)
-				Prezzo *= 0.75;
+				ImportoScontato = Prezzo * 0.75;
 			else
 				base.Sconto(cartaFedelta);
+			return ImportoScontato;
+		}
+		public override string[] ToString()
+		{
+			return new string[] { Codice, Descrizione, Prezzo.ToString(), AnnoScadenza.ToString(), "-", ConsumazioneDopoApertura.ToString(), ImportoScontato.ToString() };
 		}
 	}
 }

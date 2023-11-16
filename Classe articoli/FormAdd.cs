@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,13 +14,17 @@ namespace Classe_articoli
 {
 	public partial class FormAdd : Form
 	{
+		public string path, pathTEMP;
 		public int dim;
 		public bool isRiciclabile;
+		public bool fidelityCard;
 
 		public FormAdd()
 		{
 			InitializeComponent();
 			InitializeListView();
+			path = @"Lista.csv";
+			pathTEMP = @"ListaTEMP.csv";
 			dim = 0;
 		}
 
@@ -63,6 +69,19 @@ namespace Classe_articoli
 		{
 			UpdateUI();
 		}
+		private void buttonCalc_Click(object sender, EventArgs e)
+		{
+			var result = MessageBox.Show("Ha la carta fedeltà?", "Fidelity Card",
+				MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (result == DialogResult.Yes)
+				fidelityCard = true;
+			else
+				fidelityCard = false;
+			/*foreach (Articolo articolo in articoli)
+			{
+				articolo.Sconto(fidelityCard);
+			}*/
+		}
 
 		// Metodo per creare un nuovo oggetto Articolo in base al tipo specificato
 		Articolo CreaArticolo(string tipo)
@@ -99,16 +118,18 @@ namespace Classe_articoli
 			return tipo;
 		}
 
-		private void Visualizza(Articolo[] array)
+		private void Visualizza(Articolo[] articoli)
 		{
-			if (dim < 100)
+			listViewArticoli.Items.Clear();
+			foreach (Articolo articolo in articoli)
 			{
-				ListViewItem newItem = new ListViewItem();
-				newItem.Text = array[dim].Codice;
-				newItem.SubItems.Add(array[dim].Descrizione);
-				newItem.SubItems.Add(array[dim].Prezzo.ToString());
-				newItem.SubItems.Add(GetTipoArticolo(array[dim]));
-				listViewArticoli.Items.Add(newItem);
+				if (articolo != null)
+				{
+					string[] c = articolo.ToString();
+					string[] row = { c[0], c[1], c[2], c[3], c[4], c[5], c[6] };
+					var listViewItem = new ListViewItem(row);
+					listViewArticoli.Items.Add(listViewItem);
+				}
 			}
 		}
 
@@ -132,6 +153,7 @@ namespace Classe_articoli
 		{
 			if (radioButtonAlimentare.Checked)
 			{
+				textBoxAnnoScadenza.Enabled = true;
 				textBoxAnnoScadenza.Text = string.Empty;
 				labelCons.Visible = false;
 				textBoxGCons.Visible = false;
@@ -149,15 +171,17 @@ namespace Classe_articoli
 				textBoxGCons.Visible = true;
 			}
 		}
-
 		private void InitializeListView()
 		{
 			listViewArticoli.View = View.Details;
 			listViewArticoli.GridLines = true;
 			listViewArticoli.Columns.Add("Codice", 100);
-			listViewArticoli.Columns.Add("Descrizione", 150);
+			listViewArticoli.Columns.Add("Descrizione", 100);
 			listViewArticoli.Columns.Add("Prezzo", 100);
-			listViewArticoli.Columns.Add("Tipo", 150);
+			listViewArticoli.Columns.Add("Anno Scadenza", 100);
+			listViewArticoli.Columns.Add("Riciclabile", 100);
+			listViewArticoli.Columns.Add("Da consumarsi in (numero giorni)", 100);
+			listViewArticoli.Columns.Add("Importo scontato", 100);
 		}
 	}
 }

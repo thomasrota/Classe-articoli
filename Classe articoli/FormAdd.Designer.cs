@@ -46,6 +46,7 @@
 			this.textBoxAnnoScadenza = new System.Windows.Forms.TextBox();
 			this.labelCons = new System.Windows.Forms.Label();
 			this.textBoxGCons = new System.Windows.Forms.TextBox();
+			this.buttonCalc = new System.Windows.Forms.Button();
 			this.panelTitleAdd.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -134,7 +135,7 @@
 			this.listViewArticoli.HideSelection = false;
 			this.listViewArticoli.Location = new System.Drawing.Point(666, 125);
 			this.listViewArticoli.Name = "listViewArticoli";
-			this.listViewArticoli.Size = new System.Drawing.Size(280, 320);
+			this.listViewArticoli.Size = new System.Drawing.Size(280, 272);
 			this.listViewArticoli.TabIndex = 7;
 			this.listViewArticoli.UseCompatibleStateImageBehavior = false;
 			this.listViewArticoli.View = System.Windows.Forms.View.List;
@@ -230,11 +231,22 @@
 			this.textBoxGCons.TabIndex = 16;
 			this.textBoxGCons.Visible = false;
 			// 
+			// buttonCalc
+			// 
+			this.buttonCalc.Location = new System.Drawing.Point(666, 403);
+			this.buttonCalc.Name = "buttonCalc";
+			this.buttonCalc.Size = new System.Drawing.Size(280, 45);
+			this.buttonCalc.TabIndex = 17;
+			this.buttonCalc.Text = "Calcola Spesa Totale";
+			this.buttonCalc.UseVisualStyleBackColor = true;
+			this.buttonCalc.Click += new System.EventHandler(this.buttonCalc_Click);
+			// 
 			// FormAdd
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(946, 535);
+			this.Controls.Add(this.buttonCalc);
 			this.Controls.Add(this.textBoxGCons);
 			this.Controls.Add(this.labelCons);
 			this.Controls.Add(this.labelAnnoScadenza);
@@ -281,5 +293,6 @@
 		private System.Windows.Forms.TextBox textBoxAnnoScadenza;
 		private System.Windows.Forms.Label labelCons;
 		private System.Windows.Forms.TextBox textBoxGCons;
+		private System.Windows.Forms.Button buttonCalc;
 	}
 }

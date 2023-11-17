@@ -85,11 +85,13 @@ namespace Classe_articoli
 				{
 					string[] c = articolo.ToString();
 					sconti[cont] = articolo.Sconto(fidelityCard);
-					sum += double.Parse(c[6]);
 					cont++;
 				}
 			}
-			MessageBox.Show("Importo totale: " + sum);
+			Visualizza(articoli);
+			for (int i = 0; i < sconti.Length; i++)
+				sum += sconti[i];
+			MessageBox.Show("Importo totale: " + sum.ToString("F") + "€");
 		}
 
 		// Metodo per creare un nuovo oggetto Articolo in base al tipo specificato

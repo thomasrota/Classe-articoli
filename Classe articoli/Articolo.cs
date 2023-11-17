@@ -25,6 +25,7 @@ namespace Classe_articoli
 			Codice = codice;
 			Descrizione = descrizione;
 			Prezzo = prezzo;
+			ImportoScontato = prezzo;
 		}
 
 		public virtual double Sconto(bool cartaFedelta)
@@ -38,7 +39,7 @@ namespace Classe_articoli
 
 		public virtual string[] ToString()
 		{
-			return new string[] { Codice, Descrizione, Prezzo.ToString(), "-", "-", "-", ImportoScontato.ToString() };
+			return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", "-", "-", "-", ImportoScontato.ToString("F") + "€" };
 		}
 	}
 
@@ -74,7 +75,7 @@ namespace Classe_articoli
 		}
 		public override string[] ToString()
 		{
-			return new string[] { Codice, Descrizione, Prezzo.ToString(), AnnoScadenza.ToString(), "-", "-", ImportoScontato.ToString() };
+			return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", AnnoScadenza.ToString(), "-", "-", ImportoScontato.ToString("F") + "€" };
 		}
 	}
 
@@ -100,7 +101,7 @@ namespace Classe_articoli
 		}
 		public override string[] ToString()
 		{
-			return new string[] { Codice, Descrizione, Prezzo.ToString(), "-", (Riciclabile == true) ? "Sì" : "No", "-", ImportoScontato.ToString() };
+			return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", "-", (Riciclabile == true) ? "Sì" : "No", "-", ImportoScontato.ToString("F") + "€" };
 		}
 	}
 
@@ -137,7 +138,7 @@ namespace Classe_articoli
 		}
 		public override string[] ToString()
 		{
-			return new string[] { Codice, Descrizione, Prezzo.ToString(), AnnoScadenza.ToString(), "-", ConsumazioneDopoApertura.ToString(), ImportoScontato.ToString() };
+			return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", AnnoScadenza.ToString(), "-", ConsumazioneDopoApertura.ToString(), ImportoScontato.ToString("F") + "€" };
 		}
 	}
 }

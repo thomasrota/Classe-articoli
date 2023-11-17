@@ -34,15 +34,20 @@ namespace Classe_articoli
 			if (dim < 100)
 			{
 				Articolo nuovoArticolo = CreaArticolo(Selection());
-				if (RicercaArticolo(textBoxCodice.Text) == -1)
+				if (CheckInputLengths(textBoxCodice.Text) == 1)
 				{
-					articoli[dim] = nuovoArticolo;
-					Visualizza();
-					dim++;
-					ClearRadioButtons();
+					if (RicercaArticolo(textBoxCodice.Text) == -1)
+					{
+						articoli[dim] = nuovoArticolo;
+						Visualizza();
+						dim++;
+						ClearRadioButtons();
+					}
+					else
+						MessageBox.Show("Articolo già presente", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else
-					MessageBox.Show("Articolo già presente", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("La lunghezza del codice deve essere di 4 caratteri", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			if (dim > 100)
 				MessageBox.Show("Limite massimo prodotti raggiunto", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,6 +104,7 @@ namespace Classe_articoli
 			MessageBox.Show("Importo totale: " + sum.ToString("F") + "€");
 		}
 
+		#region Funzioni
 		// Metodo per creare un nuovo oggetto Articolo in base al tipo specificato
 		Articolo CreaArticolo(string tipo)
 		{
@@ -111,17 +117,15 @@ namespace Classe_articoli
 				case "AF":
 					return new ArticoloAlimentareFresco(textBoxCodice.Text, textBoxDescrizione.Text, Convert.ToDouble(textBoxPrezzo.Text), int.Parse(textBoxGCons.Text));
 				default:
-					MessageBox.Show("Tipo di articolo non valido", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					throw new ArgumentException("Tipo di articolo non valido.");
 			}
 		}
-
 		private void ClearRadioButtons()
 		{
 			radioButtonAlimentare.Checked = false;
 			radioButtonNonAlimentare.Checked = false;
 			radioButtonAlimentareFresco.Checked = false;
 		}
-
 		private string Selection()
 		{
 			string tipo = "";
@@ -133,7 +137,6 @@ namespace Classe_articoli
 				tipo = "AF";
 			return tipo;
 		}
-
 		private void Visualizza()
 		{
 			listViewArticoli.Items.Clear();
@@ -148,7 +151,6 @@ namespace Classe_articoli
 				}
 			}
 		}
-
 		private string GetTipoArticolo(Articolo articolo)
 		{
 			if (articolo is ArticoloAlimentare && articolo is ArticoloAlimentareFresco)
@@ -165,6 +167,12 @@ namespace Classe_articoli
 			}
 		}
 
+		private int CheckInputLengths(string codice)
+		{
+			if (codice.Length != 4)
+				return -1;
+			return 1;
+		}
 		private int RicercaArticolo(string codice)
 		{
 			for (int i = 0; i < articoli.Length; i++)
@@ -175,7 +183,6 @@ namespace Classe_articoli
 			}
 			return -1;
 		}
-
 		private void UpdateUI()
 		{
 			if (radioButtonAlimentare.Checked)
@@ -210,5 +217,6 @@ namespace Classe_articoli
 			listViewArticoli.Columns.Add("Da consumarsi in (numero giorni)", 100);
 			listViewArticoli.Columns.Add("Importo scontato", 100);
 		}
+		#endregion
 	}
 }

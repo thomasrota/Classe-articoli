@@ -58,7 +58,7 @@ namespace Classe_articoli
 			set
 			{
 				if (value < DateTime.Now.Year)
-					throw new Exception("Anno scadenza non valido");
+					MessageBox.Show("Anno scadenza non valido", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				annoScadenza = value;
 			}
 		}
@@ -122,7 +122,7 @@ namespace Classe_articoli
 				if (value <= 5)
 					consumazioneDopoApertura = value;
 				else
-					throw new Exception("Consumazione dopo apertura non valida");
+					MessageBox.Show("Consumazione dopo apertura non valida", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 

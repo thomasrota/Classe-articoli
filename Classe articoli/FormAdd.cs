@@ -34,13 +34,18 @@ namespace Classe_articoli
 			if (dim < 100)
 			{
 				Articolo nuovoArticolo = CreaArticolo(Selection());
-				articoli[dim] = nuovoArticolo;
-				Visualizza(articoli);
-				dim++;
-				ClearRadioButtons();
+				if (RicercaArticolo(textBoxCodice.Text) == -1)
+				{
+					articoli[dim] = nuovoArticolo;
+					Visualizza();
+					dim++;
+					ClearRadioButtons();
+				}
+				else
+					MessageBox.Show("Articolo già presente", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			if (dim > 100)
-				throw new Exception("Limite massimo prodotti raggiunto");
+				MessageBox.Show("Limite massimo prodotti raggiunto", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
 		private void radioButtonAlimentare_CheckedChanged(object sender, EventArgs e)
@@ -88,7 +93,7 @@ namespace Classe_articoli
 					cont++;
 				}
 			}
-			Visualizza(articoli);
+			Visualizza();
 			for (int i = 0; i < sconti.Length; i++)
 				sum += sconti[i];
 			MessageBox.Show("Importo totale: " + sum.ToString("F") + "€");
@@ -106,7 +111,7 @@ namespace Classe_articoli
 				case "AF":
 					return new ArticoloAlimentareFresco(textBoxCodice.Text, textBoxDescrizione.Text, Convert.ToDouble(textBoxPrezzo.Text), int.Parse(textBoxGCons.Text));
 				default:
-					throw new ArgumentException("Tipo di articolo non valido.");
+					MessageBox.Show("Tipo di articolo non valido", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
@@ -129,7 +134,7 @@ namespace Classe_articoli
 			return tipo;
 		}
 
-		private void Visualizza(Articolo[] articoli)
+		private void Visualizza()
 		{
 			listViewArticoli.Items.Clear();
 			foreach (Articolo articolo in articoli)
@@ -158,6 +163,17 @@ namespace Classe_articoli
 			{
 				return "Alimentare";
 			}
+		}
+
+		private int RicercaArticolo(string codice)
+		{
+			for (int i = 0; i < articoli.Length; i++)
+			{
+				if (articoli[i] != null && articoli[i].Codice == codice)
+					return i;
+				break;
+			}
+			return -1;
 		}
 
 		private void UpdateUI()

@@ -167,7 +167,6 @@ namespace Classe_articoli
 				return "Alimentare";
 			}
 		}
-
 		private int CheckInputLengths(string codice)
 		{
 			if (codice.Length != 4)
@@ -209,7 +208,7 @@ namespace Classe_articoli
 
 		private void UpdateInputs()
 		{
-			textBoxCodice.Text = (int.Parse(textBoxCodice.Text) + 1).ToString("0000");
+			textBoxCodice.Text = (int.Parse(textBoxCodice.Text) < 1000) ? (int.Parse(textBoxCodice.Text) + 1.ToString("0000")) : string.Empty;
 			textBoxDescrizione.Text = string.Empty;
 			textBoxPrezzo.Text = string.Empty;
 		}

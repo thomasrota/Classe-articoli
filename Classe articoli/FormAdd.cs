@@ -42,6 +42,7 @@ namespace Classe_articoli
 						Visualizza();
 						dim++;
 						ClearRadioButtons();
+						UpdateInputs();
 					}
 					else
 						MessageBox.Show("Articolo già presente", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -204,6 +205,13 @@ namespace Classe_articoli
 				labelCons.Visible = true;
 				textBoxGCons.Visible = true;
 			}
+		}
+
+		private void UpdateInputs()
+		{
+			textBoxCodice.Text = (int.Parse(textBoxCodice.Text) + 1).ToString("0000");
+			textBoxDescrizione.Text = string.Empty;
+			textBoxPrezzo.Text = string.Empty;
 		}
 		private void InitializeListView()
 		{

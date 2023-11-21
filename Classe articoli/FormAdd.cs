@@ -42,6 +42,7 @@ namespace Classe_articoli
 						Visualizza();
 						dim++;
 						ClearRadioButtons();
+						RemoveAddedTextboxes();
 						UpdateInputs();
 					}
 					else
@@ -205,7 +206,6 @@ namespace Classe_articoli
 				textBoxGCons.Visible = true;
 			}
 		}
-
 		private void UpdateInputs()
 		{
 			textBoxCodice.Text = (int.Parse(textBoxCodice.Text) < 1000) ? (int.Parse(textBoxCodice.Text) + 1).ToString("0000") : string.Empty;
@@ -223,6 +223,13 @@ namespace Classe_articoli
 			listViewArticoli.Columns.Add("Riciclabile", 100);
 			listViewArticoli.Columns.Add("Da consumarsi in (numero giorni)", 100);
 			listViewArticoli.Columns.Add("Importo scontato", 100);
+		}
+		private void RemoveAddedTextboxes()
+		{
+			labelAnnoScadenza.Visible = false;
+			textBoxAnnoScadenza.Visible = false;
+			labelCons.Visible = false;
+			textBoxGCons.Visible = false;
 		}
 		#endregion
 	}

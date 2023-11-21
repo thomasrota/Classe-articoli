@@ -10,10 +10,10 @@ namespace Classe_articoli
 {
 	public class Articolo
 	{
-		protected string codice;
-		protected string descrizione;
-		protected double prezzo;
-		protected double importoScontato;
+		protected string _codice;
+		protected string _descrizione;
+		protected double _prezzo;
+		protected double _importoScontato;
 		public string Codice { get; set; }
 		public string Descrizione { get; set; }
 		public double Prezzo { get; set; }

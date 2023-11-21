@@ -8,7 +8,7 @@ namespace Classe_articoli
 {
     public class ArticoloNonAlimentare : Articolo
     {
-        private bool materialericiclabile;
+        private bool _materialericiclabile;
 
         public ArticoloNonAlimentare(string codice, string descrizione, double prezzo, bool riciclabile) : base(codice, descrizione, prezzo)
         {

@@ -9,7 +9,7 @@ namespace Classe_articoli
 {
     public class ArticoloAlimentareFresco : ArticoloAlimentare
     {
-        private int consumazioneDopoApertura;
+        private int _consumazioneDopoApertura;
 
         public ArticoloAlimentareFresco(string codice, string descrizione, double prezzo, int consum) : base(codice, descrizione, prezzo, DateTime.Now.Year)
         {
@@ -18,11 +18,11 @@ namespace Classe_articoli
 
         public int ConsumazioneDopoApertura
         {
-            get { return consumazioneDopoApertura; }
+            get { return _consumazioneDopoApertura; }
             set
             {
                 if (value <= 5)
-                    consumazioneDopoApertura = value;
+                    _consumazioneDopoApertura = value;
                 else
                     MessageBox.Show("Consumazione dopo apertura non valida", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

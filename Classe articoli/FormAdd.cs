@@ -153,21 +153,6 @@ namespace Classe_articoli
 				}
 			}
 		}
-		private string GetTipoArticolo(Articolo articolo)
-		{
-			if (articolo is ArticoloAlimentare && articolo is ArticoloAlimentareFresco)
-			{
-				return "Alimentare Fresco";
-			}
-			else if (articolo is ArticoloNonAlimentare)
-			{
-				return "Non Alimentare";
-			}
-			else
-			{
-				return "Alimentare";
-			}
-		}
 		private int CheckInputLengths(string codice)
 		{
 			if (codice.Length != 4)

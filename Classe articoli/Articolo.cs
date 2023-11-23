@@ -37,7 +37,7 @@ namespace Classe_articoli
 			return ImportoScontato;
 		}
 
-		public virtual string[] ToString()
+		public virtual string[] newToString()
 		{
 			return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", "-", "-", "-", ImportoScontato.ToString("F") + "€" };
 		}

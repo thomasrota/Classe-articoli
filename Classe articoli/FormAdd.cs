@@ -27,9 +27,13 @@ namespace Classe_articoli
 			articoli = new Articolo[100];
 			sconti = new double[100];
 			dim = 0;
-		}
+			buttonCalc.Enabled = true;
+            ToolTip toolTip1 = new ToolTip();
+			toolTip1.ShowAlways = true;
+			toolTip1.SetToolTip(buttonCalc, "Calcola totale. Tasto cliccabile solamente una volta.");
+        }
 
-		private void buttonAggiungi_Click(object sender, EventArgs e)
+        private void buttonAggiungi_Click(object sender, EventArgs e)
 		{
 			if (dim < 100)
 			{
@@ -95,7 +99,7 @@ namespace Classe_articoli
 			{
 				if (articolo != null)
 				{
-					string[] c = articolo.ToString();
+					string[] c = articolo.newToString();
 					sconti[cont] = articolo.Sconto(fidelityCard);
 					cont++;
 				}
@@ -104,6 +108,7 @@ namespace Classe_articoli
 			for (int i = 0; i < sconti.Length; i++)
 				sum += sconti[i];
 			MessageBox.Show("Importo totale: " + sum.ToString("F") + "€");
+			buttonCalc.Enabled = false;
 		}
 
 		#region Funzioni
@@ -146,7 +151,7 @@ namespace Classe_articoli
 			{
 				if (articolo != null)
 				{
-					string[] c = articolo.ToString();
+					string[] c = articolo.newToString();
 					string[] row = { c[0], c[1], c[2], c[3], c[4], c[5], c[6] };
 					var listViewItem = new ListViewItem(row);
 					listViewArticoli.Items.Add(listViewItem);
@@ -216,6 +221,6 @@ namespace Classe_articoli
 			labelCons.Visible = false;
 			textBoxGCons.Visible = false;
 		}
-		#endregion
-	}
+        #endregion
+    }
 }

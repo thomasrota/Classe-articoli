@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             this.panelTitleAdd = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.radioButtonAlimentare = new System.Windows.Forms.RadioButton();
@@ -47,6 +48,7 @@
             this.labelCons = new System.Windows.Forms.Label();
             this.textBoxGCons = new System.Windows.Forms.TextBox();
             this.buttonCalc = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelTitleAdd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             this.panelTitleAdd.Controls.Add(this.label1);
             this.panelTitleAdd.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleAdd.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleAdd.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitleAdd.Name = "panelTitleAdd";
             this.panelTitleAdd.Size = new System.Drawing.Size(710, 74);
             this.panelTitleAdd.TabIndex = 0;
@@ -77,7 +79,7 @@
             this.radioButtonAlimentare.AutoSize = true;
             this.radioButtonAlimentare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonAlimentare.Location = new System.Drawing.Point(266, 139);
-            this.radioButtonAlimentare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonAlimentare.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonAlimentare.Name = "radioButtonAlimentare";
             this.radioButtonAlimentare.Size = new System.Drawing.Size(95, 22);
             this.radioButtonAlimentare.TabIndex = 1;
@@ -91,7 +93,7 @@
             this.radioButtonNonAlimentare.AutoSize = true;
             this.radioButtonNonAlimentare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonNonAlimentare.Location = new System.Drawing.Point(266, 165);
-            this.radioButtonNonAlimentare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonNonAlimentare.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonNonAlimentare.Name = "radioButtonNonAlimentare";
             this.radioButtonNonAlimentare.Size = new System.Drawing.Size(127, 22);
             this.radioButtonNonAlimentare.TabIndex = 2;
@@ -105,7 +107,7 @@
             this.radioButtonAlimentareFresco.AutoSize = true;
             this.radioButtonAlimentareFresco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonAlimentareFresco.Location = new System.Drawing.Point(266, 191);
-            this.radioButtonAlimentareFresco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonAlimentareFresco.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonAlimentareFresco.Name = "radioButtonAlimentareFresco";
             this.radioButtonAlimentareFresco.Size = new System.Drawing.Size(146, 22);
             this.radioButtonAlimentareFresco.TabIndex = 3;
@@ -117,7 +119,7 @@
             // textBoxCodice
             // 
             this.textBoxCodice.Location = new System.Drawing.Point(31, 139);
-            this.textBoxCodice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCodice.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCodice.Name = "textBoxCodice";
             this.textBoxCodice.Size = new System.Drawing.Size(148, 20);
             this.textBoxCodice.TabIndex = 4;
@@ -125,7 +127,7 @@
             // textBoxDescrizione
             // 
             this.textBoxDescrizione.Location = new System.Drawing.Point(31, 226);
-            this.textBoxDescrizione.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDescrizione.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDescrizione.Name = "textBoxDescrizione";
             this.textBoxDescrizione.Size = new System.Drawing.Size(189, 20);
             this.textBoxDescrizione.TabIndex = 5;
@@ -133,7 +135,7 @@
             // textBoxPrezzo
             // 
             this.textBoxPrezzo.Location = new System.Drawing.Point(31, 305);
-            this.textBoxPrezzo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPrezzo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPrezzo.Name = "textBoxPrezzo";
             this.textBoxPrezzo.Size = new System.Drawing.Size(189, 20);
             this.textBoxPrezzo.TabIndex = 6;
@@ -142,7 +144,7 @@
             // 
             this.listViewArticoli.HideSelection = false;
             this.listViewArticoli.Location = new System.Drawing.Point(500, 102);
-            this.listViewArticoli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewArticoli.Margin = new System.Windows.Forms.Padding(2);
             this.listViewArticoli.Name = "listViewArticoli";
             this.listViewArticoli.Size = new System.Drawing.Size(211, 222);
             this.listViewArticoli.TabIndex = 7;
@@ -155,7 +157,7 @@
             this.buttonAggiungi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAggiungi.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAggiungi.Location = new System.Drawing.Point(9, 385);
-            this.buttonAggiungi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAggiungi.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAggiungi.Name = "buttonAggiungi";
             this.buttonAggiungi.Size = new System.Drawing.Size(700, 74);
             this.buttonAggiungi.TabIndex = 8;
@@ -222,7 +224,7 @@
             // textBoxAnnoScadenza
             // 
             this.textBoxAnnoScadenza.Location = new System.Drawing.Point(260, 271);
-            this.textBoxAnnoScadenza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAnnoScadenza.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAnnoScadenza.Name = "textBoxAnnoScadenza";
             this.textBoxAnnoScadenza.Size = new System.Drawing.Size(218, 20);
             this.textBoxAnnoScadenza.TabIndex = 13;
@@ -243,7 +245,7 @@
             // textBoxGCons
             // 
             this.textBoxGCons.Location = new System.Drawing.Point(260, 346);
-            this.textBoxGCons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxGCons.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxGCons.Name = "textBoxGCons";
             this.textBoxGCons.Size = new System.Drawing.Size(191, 20);
             this.textBoxGCons.TabIndex = 16;
@@ -252,7 +254,7 @@
             // buttonCalc
             // 
             this.buttonCalc.Location = new System.Drawing.Point(500, 327);
-            this.buttonCalc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCalc.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCalc.Name = "buttonCalc";
             this.buttonCalc.Size = new System.Drawing.Size(210, 37);
             this.buttonCalc.TabIndex = 17;
@@ -283,7 +285,7 @@
             this.Controls.Add(this.radioButtonNonAlimentare);
             this.Controls.Add(this.radioButtonAlimentare);
             this.Controls.Add(this.panelTitleAdd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAdd";
             this.Text = "FormAdd";
             this.panelTitleAdd.ResumeLayout(false);
@@ -314,5 +316,6 @@
 		private System.Windows.Forms.Label labelCons;
 		private System.Windows.Forms.TextBox textBoxGCons;
 		private System.Windows.Forms.Button buttonCalc;
-	}
+        private System.Windows.Forms.ToolTip toolTip1;
+    }
 }

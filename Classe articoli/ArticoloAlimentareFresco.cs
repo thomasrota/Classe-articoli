@@ -27,8 +27,21 @@ namespace Classe_articoli
                     MessageBox.Show("Consumazione dopo apertura non valida", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public override bool Equals(object obj)
+        {
+	        if (obj == null || GetType() != obj.GetType())
+	        {
+		        return false;
+	        }
+	        ArticoloAlimentareFresco other = (ArticoloAlimentareFresco)obj;
 
-        public override double Sconto(bool cartaFedelta)
+	        if (base.Equals(other) && ConsumazioneDopoApertura == other.ConsumazioneDopoApertura)
+	        {
+		        return true;
+	        }
+	        return false;
+        }
+		public override double Sconto(bool cartaFedelta)
         {
             if (cartaFedelta && ConsumazioneDopoApertura > 0)
                 ImportoScontato = Prezzo * 0.95 - (0.1 / ConsumazioneDopoApertura);

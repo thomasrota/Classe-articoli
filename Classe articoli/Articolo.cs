@@ -27,6 +27,20 @@ namespace Classe_articoli
 			Prezzo = prezzo;
 			ImportoScontato = prezzo;
 		}
+		public override bool Equals(object obj)
+		{
+			if (obj == null || GetType() != obj.GetType())
+			{
+				return false;
+			}
+			Articolo other = (Articolo)obj;
+
+			if (Codice == other.Codice && Descrizione == other.Descrizione && Prezzo == other.Prezzo)
+			{
+				return true;
+			}
+			return false;
+		}
 
 		public virtual double Sconto(bool cartaFedelta)
 		{
@@ -36,10 +50,51 @@ namespace Classe_articoli
 				ImportoScontato = Prezzo;
 			return ImportoScontato;
 		}
+		public int Compare(Articolo other)
+		{
+			int ret = 0;
 
+			if (Prezzo > other.Prezzo)
+			{
+				ret = 1;
+			}
+			else if (Prezzo < other.Prezzo)
+			{
+				ret = -1;
+			}
+
+			return ret;
+		}
 		public virtual string[] newToString()
 		{
 			return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", "-", "-", "-", ImportoScontato.ToString("F") + "€" };
+		}
+
+		public static Articolo[] Sort(Articolo[] toSort, bool sYn)
+		{
+			if (sYn)
+			{
+				int i = 0, j = 0;
+				Articolo temp = null;
+				while (toSort[i + 1] != null)
+				{
+					while (toSort[j + 1] != null)
+					{
+						if (toSort[j + 1].Compare(toSort[j]) == 1)
+						{
+							temp = toSort[j];
+							toSort[j] = toSort[j + 1];
+							toSort[j + 1] = temp;
+						}
+						j++;
+					}
+					j = 0;
+					i++;
+				}
+				return toSort;
+			}
+			else
+				return toSort;
 		}
 	}
 }

@@ -26,8 +26,21 @@ namespace Classe_articoli
                 annoScadenza = value;
             }
         }
+        public override bool Equals(object obj)
+        {
+	        if (obj == null || GetType() != obj.GetType())
+	        {
+		        return false;
+	        }
+	        ArticoloAlimentare other = (ArticoloAlimentare)obj;
 
-        public override double Sconto(bool cartaFedelta)
+	        if (base.Equals(other) && AnnoScadenza == other.AnnoScadenza)
+	        {
+		        return true;
+	        }
+	        return false;
+        }
+		public override double Sconto(bool cartaFedelta)
         {
             if (cartaFedelta && AnnoScadenza == DateTime.Now.Year)
                 ImportoScontato = Prezzo * 0.75;

@@ -3,28 +3,28 @@
   <Class Name="Classe_articoli.Articolo">
     <Position X="6" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AhAAAAAAARQAAAAEAAAAAAAAAAAAQAAAIAAAIAAAAQA=</HashCode>
+      <HashCode>AhAAAAAAARQAAAAAgAAQAIAAAAAAQAAAIABAIAAAAQA=</HashCode>
       <FileName>Articolo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Classe_articoli.ArticoloAlimentare">
-    <Position X="9" Y="4.75" Width="1.75" />
+    <Position X="9" Y="5.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAEAAAAAAAAAAAAQAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAAAAAgAAAAIAAAAAAQAAAAAAAAAQAAAA=</HashCode>
       <FileName>ArticoloAlimentare.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Classe_articoli.ArticoloNonAlimentare">
-    <Position X="3.5" Y="4.75" Width="2" />
+    <Position X="3.5" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAEAAAAAAAAAAgAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAAAgAAAAIAAAAgAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>ArticoloNonAlimentare.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Classe_articoli.ArticoloAlimentareFresco">
-    <Position X="8.75" Y="8.25" Width="2.5" />
+    <Position X="8.75" Y="9" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAEAAAAAAAAAAAAQAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAgAAAAIAAAAAAQAACAAAAAAAAAAA=</HashCode>
       <FileName>ArticoloAlimentareFresco.cs</FileName>
     </TypeIdentifier>
   </Class>

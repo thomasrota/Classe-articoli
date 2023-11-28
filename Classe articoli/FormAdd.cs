@@ -7,6 +7,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -109,6 +110,16 @@ namespace Classe_articoli
 				sum += sconti[i];
 			MessageBox.Show("Importo totale: " + sum.ToString("F") + "€");
 			buttonCalc.Enabled = false;
+			Thread.Sleep(1000);
+			var sort = MessageBox.Show("Vuoi ordinare lo scontrino per ordine di prezzo?", "Ordinamento",
+				MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (sort == DialogResult.Yes)
+			{
+				Articolo.Sort(articoli, true);
+				Visualizza();
+			}
+			else
+				Articolo.Sort(articoli, false);
 		}
 
 		#region Funzioni

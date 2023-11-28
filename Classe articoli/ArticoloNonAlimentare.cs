@@ -16,7 +16,21 @@ namespace Classe_articoli
         }
 
         public bool Riciclabile { get; set; }
-        public override double Sconto(bool cartaFedelta)
+        public override bool Equals(object obj)
+        {
+	        if (obj == null || GetType() != obj.GetType())
+	        {
+		        return false;
+	        }
+	        ArticoloNonAlimentare other = (ArticoloNonAlimentare)obj;
+
+	        if (base.Equals(other) && Riciclabile == other.Riciclabile)
+	        {
+		        return true;
+	        }
+	        return false;
+        }
+		public override double Sconto(bool cartaFedelta)
         {
             if (cartaFedelta && Riciclabile)
                 ImportoScontato = Prezzo * 0.85;

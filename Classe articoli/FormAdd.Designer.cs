@@ -28,270 +28,263 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.components = new System.ComponentModel.Container();
-            this.panelTitleAdd = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButtonAlimentare = new System.Windows.Forms.RadioButton();
-            this.radioButtonNonAlimentare = new System.Windows.Forms.RadioButton();
-            this.radioButtonAlimentareFresco = new System.Windows.Forms.RadioButton();
-            this.textBoxCodice = new System.Windows.Forms.TextBox();
-            this.textBoxDescrizione = new System.Windows.Forms.TextBox();
-            this.textBoxPrezzo = new System.Windows.Forms.TextBox();
-            this.listViewArticoli = new System.Windows.Forms.ListView();
-            this.buttonAggiungi = new System.Windows.Forms.Button();
-            this.labelProdType = new System.Windows.Forms.Label();
-            this.labelCodiceProd = new System.Windows.Forms.Label();
-            this.labelDescProd = new System.Windows.Forms.Label();
-            this.labelPriceProd = new System.Windows.Forms.Label();
-            this.labelAnnoScadenza = new System.Windows.Forms.Label();
-            this.textBoxAnnoScadenza = new System.Windows.Forms.TextBox();
-            this.labelCons = new System.Windows.Forms.Label();
-            this.textBoxGCons = new System.Windows.Forms.TextBox();
-            this.buttonCalc = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panelTitleAdd.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // panelTitleAdd
-            // 
-            this.panelTitleAdd.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelTitleAdd.Controls.Add(this.label1);
-            this.panelTitleAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleAdd.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.panelTitleAdd.Name = "panelTitleAdd";
-            this.panelTitleAdd.Size = new System.Drawing.Size(710, 74);
-            this.panelTitleAdd.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(270, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Aggiungi Articoli";
-            // 
-            // radioButtonAlimentare
-            // 
-            this.radioButtonAlimentare.AutoSize = true;
-            this.radioButtonAlimentare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonAlimentare.Location = new System.Drawing.Point(266, 139);
-            this.radioButtonAlimentare.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonAlimentare.Name = "radioButtonAlimentare";
-            this.radioButtonAlimentare.Size = new System.Drawing.Size(95, 22);
-            this.radioButtonAlimentare.TabIndex = 1;
-            this.radioButtonAlimentare.TabStop = true;
-            this.radioButtonAlimentare.Text = "Alimentare";
-            this.radioButtonAlimentare.UseVisualStyleBackColor = true;
-            this.radioButtonAlimentare.CheckedChanged += new System.EventHandler(this.radioButtonAlimentare_CheckedChanged);
-            // 
-            // radioButtonNonAlimentare
-            // 
-            this.radioButtonNonAlimentare.AutoSize = true;
-            this.radioButtonNonAlimentare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonNonAlimentare.Location = new System.Drawing.Point(266, 165);
-            this.radioButtonNonAlimentare.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonNonAlimentare.Name = "radioButtonNonAlimentare";
-            this.radioButtonNonAlimentare.Size = new System.Drawing.Size(127, 22);
-            this.radioButtonNonAlimentare.TabIndex = 2;
-            this.radioButtonNonAlimentare.TabStop = true;
-            this.radioButtonNonAlimentare.Text = "Non Alimentare";
-            this.radioButtonNonAlimentare.UseVisualStyleBackColor = true;
-            this.radioButtonNonAlimentare.CheckedChanged += new System.EventHandler(this.radioButtonNonAlimentare_CheckedChanged);
-            // 
-            // radioButtonAlimentareFresco
-            // 
-            this.radioButtonAlimentareFresco.AutoSize = true;
-            this.radioButtonAlimentareFresco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonAlimentareFresco.Location = new System.Drawing.Point(266, 191);
-            this.radioButtonAlimentareFresco.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonAlimentareFresco.Name = "radioButtonAlimentareFresco";
-            this.radioButtonAlimentareFresco.Size = new System.Drawing.Size(146, 22);
-            this.radioButtonAlimentareFresco.TabIndex = 3;
-            this.radioButtonAlimentareFresco.TabStop = true;
-            this.radioButtonAlimentareFresco.Text = "Alimentare Fresco";
-            this.radioButtonAlimentareFresco.UseVisualStyleBackColor = true;
-            this.radioButtonAlimentareFresco.CheckedChanged += new System.EventHandler(this.radioButtonAlimentareFresco_CheckedChanged);
-            // 
-            // textBoxCodice
-            // 
-            this.textBoxCodice.Location = new System.Drawing.Point(31, 139);
-            this.textBoxCodice.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxCodice.Name = "textBoxCodice";
-            this.textBoxCodice.Size = new System.Drawing.Size(148, 20);
-            this.textBoxCodice.TabIndex = 4;
-            // 
-            // textBoxDescrizione
-            // 
-            this.textBoxDescrizione.Location = new System.Drawing.Point(31, 226);
-            this.textBoxDescrizione.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxDescrizione.Name = "textBoxDescrizione";
-            this.textBoxDescrizione.Size = new System.Drawing.Size(189, 20);
-            this.textBoxDescrizione.TabIndex = 5;
-            // 
-            // textBoxPrezzo
-            // 
-            this.textBoxPrezzo.Location = new System.Drawing.Point(31, 305);
-            this.textBoxPrezzo.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPrezzo.Name = "textBoxPrezzo";
-            this.textBoxPrezzo.Size = new System.Drawing.Size(189, 20);
-            this.textBoxPrezzo.TabIndex = 6;
-            // 
-            // listViewArticoli
-            // 
-            this.listViewArticoli.HideSelection = false;
-            this.listViewArticoli.Location = new System.Drawing.Point(500, 102);
-            this.listViewArticoli.Margin = new System.Windows.Forms.Padding(2);
-            this.listViewArticoli.Name = "listViewArticoli";
-            this.listViewArticoli.Size = new System.Drawing.Size(211, 222);
-            this.listViewArticoli.TabIndex = 7;
-            this.listViewArticoli.UseCompatibleStateImageBehavior = false;
-            this.listViewArticoli.View = System.Windows.Forms.View.List;
-            // 
-            // buttonAggiungi
-            // 
-            this.buttonAggiungi.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonAggiungi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAggiungi.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAggiungi.Location = new System.Drawing.Point(9, 385);
-            this.buttonAggiungi.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAggiungi.Name = "buttonAggiungi";
-            this.buttonAggiungi.Size = new System.Drawing.Size(700, 74);
-            this.buttonAggiungi.TabIndex = 8;
-            this.buttonAggiungi.Text = "Aggiungi";
-            this.buttonAggiungi.UseVisualStyleBackColor = false;
-            this.buttonAggiungi.Click += new System.EventHandler(this.buttonAggiungi_Click);
-            // 
-            // labelProdType
-            // 
-            this.labelProdType.AutoSize = true;
-            this.labelProdType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProdType.Location = new System.Drawing.Point(262, 102);
-            this.labelProdType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelProdType.Name = "labelProdType";
-            this.labelProdType.Size = new System.Drawing.Size(158, 24);
-            this.labelProdType.TabIndex = 9;
-            this.labelProdType.Text = "Tipo di prodotto";
-            // 
-            // labelCodiceProd
-            // 
-            this.labelCodiceProd.AutoSize = true;
-            this.labelCodiceProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCodiceProd.Location = new System.Drawing.Point(27, 102);
-            this.labelCodiceProd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelCodiceProd.Name = "labelCodiceProd";
-            this.labelCodiceProd.Size = new System.Drawing.Size(159, 24);
-            this.labelCodiceProd.TabIndex = 10;
-            this.labelCodiceProd.Text = "Codice prodotto";
-            // 
-            // labelDescProd
-            // 
-            this.labelDescProd.AutoSize = true;
-            this.labelDescProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescProd.Location = new System.Drawing.Point(27, 188);
-            this.labelDescProd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelDescProd.Name = "labelDescProd";
-            this.labelDescProd.Size = new System.Drawing.Size(203, 24);
-            this.labelDescProd.TabIndex = 11;
-            this.labelDescProd.Text = "Descrizione prodotto";
-            // 
-            // labelPriceProd
-            // 
-            this.labelPriceProd.AutoSize = true;
-            this.labelPriceProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPriceProd.Location = new System.Drawing.Point(27, 271);
-            this.labelPriceProd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPriceProd.Name = "labelPriceProd";
-            this.labelPriceProd.Size = new System.Drawing.Size(157, 24);
-            this.labelPriceProd.TabIndex = 12;
-            this.labelPriceProd.Text = "Prezzo prodotto";
-            // 
-            // labelAnnoScadenza
-            // 
-            this.labelAnnoScadenza.AutoSize = true;
-            this.labelAnnoScadenza.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnnoScadenza.Location = new System.Drawing.Point(256, 232);
-            this.labelAnnoScadenza.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelAnnoScadenza.Name = "labelAnnoScadenza";
-            this.labelAnnoScadenza.Size = new System.Drawing.Size(238, 24);
-            this.labelAnnoScadenza.TabIndex = 14;
-            this.labelAnnoScadenza.Text = "Anno scadenza prodotto";
-            this.labelAnnoScadenza.Visible = false;
-            // 
-            // textBoxAnnoScadenza
-            // 
-            this.textBoxAnnoScadenza.Location = new System.Drawing.Point(260, 271);
-            this.textBoxAnnoScadenza.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxAnnoScadenza.Name = "textBoxAnnoScadenza";
-            this.textBoxAnnoScadenza.Size = new System.Drawing.Size(218, 20);
-            this.textBoxAnnoScadenza.TabIndex = 13;
-            this.textBoxAnnoScadenza.Visible = false;
-            // 
-            // labelCons
-            // 
-            this.labelCons.AutoSize = true;
-            this.labelCons.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCons.Location = new System.Drawing.Point(256, 305);
-            this.labelCons.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelCons.Name = "labelCons";
-            this.labelCons.Size = new System.Drawing.Size(208, 24);
-            this.labelCons.TabIndex = 15;
-            this.labelCons.Text = "Giorni consumazione";
-            this.labelCons.Visible = false;
-            // 
-            // textBoxGCons
-            // 
-            this.textBoxGCons.Location = new System.Drawing.Point(260, 346);
-            this.textBoxGCons.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxGCons.Name = "textBoxGCons";
-            this.textBoxGCons.Size = new System.Drawing.Size(191, 20);
-            this.textBoxGCons.TabIndex = 16;
-            this.textBoxGCons.Visible = false;
-            // 
-            // buttonCalc
-            // 
-            this.buttonCalc.Location = new System.Drawing.Point(500, 327);
-            this.buttonCalc.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCalc.Name = "buttonCalc";
-            this.buttonCalc.Size = new System.Drawing.Size(210, 37);
-            this.buttonCalc.TabIndex = 17;
-            this.buttonCalc.Text = "Calcola Spesa Totale";
-            this.buttonCalc.UseVisualStyleBackColor = true;
-            this.buttonCalc.Click += new System.EventHandler(this.buttonCalc_Click);
-            // 
-            // FormAdd
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 435);
-            this.Controls.Add(this.buttonCalc);
-            this.Controls.Add(this.textBoxGCons);
-            this.Controls.Add(this.labelCons);
-            this.Controls.Add(this.labelAnnoScadenza);
-            this.Controls.Add(this.textBoxAnnoScadenza);
-            this.Controls.Add(this.labelPriceProd);
-            this.Controls.Add(this.labelDescProd);
-            this.Controls.Add(this.labelCodiceProd);
-            this.Controls.Add(this.labelProdType);
-            this.Controls.Add(this.buttonAggiungi);
-            this.Controls.Add(this.listViewArticoli);
-            this.Controls.Add(this.textBoxPrezzo);
-            this.Controls.Add(this.textBoxDescrizione);
-            this.Controls.Add(this.textBoxCodice);
-            this.Controls.Add(this.radioButtonAlimentareFresco);
-            this.Controls.Add(this.radioButtonNonAlimentare);
-            this.Controls.Add(this.radioButtonAlimentare);
-            this.Controls.Add(this.panelTitleAdd);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FormAdd";
-            this.Text = "FormAdd";
-            this.panelTitleAdd.ResumeLayout(false);
-            this.panelTitleAdd.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.components = new System.ComponentModel.Container();
+			this.panelTitleAdd = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.radioButtonAlimentare = new System.Windows.Forms.RadioButton();
+			this.radioButtonNonAlimentare = new System.Windows.Forms.RadioButton();
+			this.radioButtonAlimentareFresco = new System.Windows.Forms.RadioButton();
+			this.textBoxCodice = new System.Windows.Forms.TextBox();
+			this.textBoxDescrizione = new System.Windows.Forms.TextBox();
+			this.textBoxPrezzo = new System.Windows.Forms.TextBox();
+			this.listViewArticoli = new System.Windows.Forms.ListView();
+			this.buttonAggiungi = new System.Windows.Forms.Button();
+			this.labelProdType = new System.Windows.Forms.Label();
+			this.labelCodiceProd = new System.Windows.Forms.Label();
+			this.labelDescProd = new System.Windows.Forms.Label();
+			this.labelPriceProd = new System.Windows.Forms.Label();
+			this.labelAnnoScadenza = new System.Windows.Forms.Label();
+			this.textBoxAnnoScadenza = new System.Windows.Forms.TextBox();
+			this.labelCons = new System.Windows.Forms.Label();
+			this.textBoxGCons = new System.Windows.Forms.TextBox();
+			this.buttonCalc = new System.Windows.Forms.Button();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.panelTitleAdd.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// panelTitleAdd
+			// 
+			this.panelTitleAdd.BackColor = System.Drawing.SystemColors.AppWorkspace;
+			this.panelTitleAdd.Controls.Add(this.label1);
+			this.panelTitleAdd.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelTitleAdd.Location = new System.Drawing.Point(0, 0);
+			this.panelTitleAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.panelTitleAdd.Name = "panelTitleAdd";
+			this.panelTitleAdd.Size = new System.Drawing.Size(947, 91);
+			this.panelTitleAdd.TabIndex = 0;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(360, 31);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(253, 33);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Aggiungi Articoli";
+			// 
+			// radioButtonAlimentare
+			// 
+			this.radioButtonAlimentare.AutoSize = true;
+			this.radioButtonAlimentare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.radioButtonAlimentare.Location = new System.Drawing.Point(355, 171);
+			this.radioButtonAlimentare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.radioButtonAlimentare.Name = "radioButtonAlimentare";
+			this.radioButtonAlimentare.Size = new System.Drawing.Size(116, 26);
+			this.radioButtonAlimentare.TabIndex = 1;
+			this.radioButtonAlimentare.TabStop = true;
+			this.radioButtonAlimentare.Text = "Alimentare";
+			this.radioButtonAlimentare.UseVisualStyleBackColor = true;
+			this.radioButtonAlimentare.CheckedChanged += new System.EventHandler(this.radioButtonAlimentare_CheckedChanged);
+			// 
+			// radioButtonNonAlimentare
+			// 
+			this.radioButtonNonAlimentare.AutoSize = true;
+			this.radioButtonNonAlimentare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.radioButtonNonAlimentare.Location = new System.Drawing.Point(355, 203);
+			this.radioButtonNonAlimentare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.radioButtonNonAlimentare.Name = "radioButtonNonAlimentare";
+			this.radioButtonNonAlimentare.Size = new System.Drawing.Size(154, 26);
+			this.radioButtonNonAlimentare.TabIndex = 2;
+			this.radioButtonNonAlimentare.TabStop = true;
+			this.radioButtonNonAlimentare.Text = "Non Alimentare";
+			this.radioButtonNonAlimentare.UseVisualStyleBackColor = true;
+			this.radioButtonNonAlimentare.CheckedChanged += new System.EventHandler(this.radioButtonNonAlimentare_CheckedChanged);
+			// 
+			// radioButtonAlimentareFresco
+			// 
+			this.radioButtonAlimentareFresco.AutoSize = true;
+			this.radioButtonAlimentareFresco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.radioButtonAlimentareFresco.Location = new System.Drawing.Point(355, 235);
+			this.radioButtonAlimentareFresco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.radioButtonAlimentareFresco.Name = "radioButtonAlimentareFresco";
+			this.radioButtonAlimentareFresco.Size = new System.Drawing.Size(176, 26);
+			this.radioButtonAlimentareFresco.TabIndex = 3;
+			this.radioButtonAlimentareFresco.TabStop = true;
+			this.radioButtonAlimentareFresco.Text = "Alimentare Fresco";
+			this.radioButtonAlimentareFresco.UseVisualStyleBackColor = true;
+			this.radioButtonAlimentareFresco.CheckedChanged += new System.EventHandler(this.radioButtonAlimentareFresco_CheckedChanged);
+			// 
+			// textBoxCodice
+			// 
+			this.textBoxCodice.Location = new System.Drawing.Point(41, 171);
+			this.textBoxCodice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.textBoxCodice.Name = "textBoxCodice";
+			this.textBoxCodice.Size = new System.Drawing.Size(196, 22);
+			this.textBoxCodice.TabIndex = 4;
+			// 
+			// textBoxDescrizione
+			// 
+			this.textBoxDescrizione.Location = new System.Drawing.Point(41, 278);
+			this.textBoxDescrizione.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.textBoxDescrizione.Name = "textBoxDescrizione";
+			this.textBoxDescrizione.Size = new System.Drawing.Size(251, 22);
+			this.textBoxDescrizione.TabIndex = 5;
+			// 
+			// textBoxPrezzo
+			// 
+			this.textBoxPrezzo.Location = new System.Drawing.Point(41, 375);
+			this.textBoxPrezzo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.textBoxPrezzo.Name = "textBoxPrezzo";
+			this.textBoxPrezzo.Size = new System.Drawing.Size(251, 22);
+			this.textBoxPrezzo.TabIndex = 6;
+			// 
+			// listViewArticoli
+			// 
+			this.listViewArticoli.HideSelection = false;
+			this.listViewArticoli.Location = new System.Drawing.Point(667, 126);
+			this.listViewArticoli.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.listViewArticoli.Name = "listViewArticoli";
+			this.listViewArticoli.Size = new System.Drawing.Size(280, 272);
+			this.listViewArticoli.TabIndex = 7;
+			this.listViewArticoli.UseCompatibleStateImageBehavior = false;
+			this.listViewArticoli.View = System.Windows.Forms.View.List;
+			// 
+			// buttonAggiungi
+			// 
+			this.buttonAggiungi.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.buttonAggiungi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.buttonAggiungi.Font = new System.Drawing.Font("Century", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonAggiungi.Location = new System.Drawing.Point(12, 474);
+			this.buttonAggiungi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.buttonAggiungi.Name = "buttonAggiungi";
+			this.buttonAggiungi.Size = new System.Drawing.Size(933, 91);
+			this.buttonAggiungi.TabIndex = 8;
+			this.buttonAggiungi.Text = "Aggiungi";
+			this.buttonAggiungi.UseVisualStyleBackColor = false;
+			this.buttonAggiungi.Click += new System.EventHandler(this.buttonAggiungi_Click);
+			// 
+			// labelProdType
+			// 
+			this.labelProdType.AutoSize = true;
+			this.labelProdType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelProdType.Location = new System.Drawing.Point(349, 126);
+			this.labelProdType.Name = "labelProdType";
+			this.labelProdType.Size = new System.Drawing.Size(201, 29);
+			this.labelProdType.TabIndex = 9;
+			this.labelProdType.Text = "Tipo di prodotto";
+			// 
+			// labelCodiceProd
+			// 
+			this.labelCodiceProd.AutoSize = true;
+			this.labelCodiceProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelCodiceProd.Location = new System.Drawing.Point(36, 126);
+			this.labelCodiceProd.Name = "labelCodiceProd";
+			this.labelCodiceProd.Size = new System.Drawing.Size(201, 29);
+			this.labelCodiceProd.TabIndex = 10;
+			this.labelCodiceProd.Text = "Codice prodotto";
+			// 
+			// labelDescProd
+			// 
+			this.labelDescProd.AutoSize = true;
+			this.labelDescProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelDescProd.Location = new System.Drawing.Point(36, 231);
+			this.labelDescProd.Name = "labelDescProd";
+			this.labelDescProd.Size = new System.Drawing.Size(256, 29);
+			this.labelDescProd.TabIndex = 11;
+			this.labelDescProd.Text = "Descrizione prodotto";
+			// 
+			// labelPriceProd
+			// 
+			this.labelPriceProd.AutoSize = true;
+			this.labelPriceProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelPriceProd.Location = new System.Drawing.Point(36, 334);
+			this.labelPriceProd.Name = "labelPriceProd";
+			this.labelPriceProd.Size = new System.Drawing.Size(198, 29);
+			this.labelPriceProd.TabIndex = 12;
+			this.labelPriceProd.Text = "Prezzo prodotto";
+			// 
+			// labelAnnoScadenza
+			// 
+			this.labelAnnoScadenza.AutoSize = true;
+			this.labelAnnoScadenza.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelAnnoScadenza.Location = new System.Drawing.Point(341, 286);
+			this.labelAnnoScadenza.Name = "labelAnnoScadenza";
+			this.labelAnnoScadenza.Size = new System.Drawing.Size(294, 29);
+			this.labelAnnoScadenza.TabIndex = 14;
+			this.labelAnnoScadenza.Text = "Anno scadenza prodotto";
+			this.labelAnnoScadenza.Visible = false;
+			// 
+			// textBoxAnnoScadenza
+			// 
+			this.textBoxAnnoScadenza.Location = new System.Drawing.Point(347, 334);
+			this.textBoxAnnoScadenza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.textBoxAnnoScadenza.Name = "textBoxAnnoScadenza";
+			this.textBoxAnnoScadenza.Size = new System.Drawing.Size(289, 22);
+			this.textBoxAnnoScadenza.TabIndex = 13;
+			this.textBoxAnnoScadenza.Visible = false;
+			// 
+			// labelCons
+			// 
+			this.labelCons.AutoSize = true;
+			this.labelCons.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelCons.Location = new System.Drawing.Point(341, 375);
+			this.labelCons.Name = "labelCons";
+			this.labelCons.Size = new System.Drawing.Size(258, 29);
+			this.labelCons.TabIndex = 15;
+			this.labelCons.Text = "Giorni consumazione";
+			this.labelCons.Visible = false;
+			// 
+			// textBoxGCons
+			// 
+			this.textBoxGCons.Location = new System.Drawing.Point(347, 426);
+			this.textBoxGCons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.textBoxGCons.Name = "textBoxGCons";
+			this.textBoxGCons.Size = new System.Drawing.Size(253, 22);
+			this.textBoxGCons.TabIndex = 16;
+			this.textBoxGCons.Visible = false;
+			// 
+			// buttonCalc
+			// 
+			this.buttonCalc.Location = new System.Drawing.Point(667, 402);
+			this.buttonCalc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.buttonCalc.Name = "buttonCalc";
+			this.buttonCalc.Size = new System.Drawing.Size(280, 46);
+			this.buttonCalc.TabIndex = 17;
+			this.buttonCalc.Text = "Calcola Spesa Totale";
+			this.buttonCalc.UseVisualStyleBackColor = true;
+			this.buttonCalc.Click += new System.EventHandler(this.buttonCalc_Click);
+			// 
+			// FormAdd
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(947, 535);
+			this.Controls.Add(this.buttonCalc);
+			this.Controls.Add(this.textBoxGCons);
+			this.Controls.Add(this.labelCons);
+			this.Controls.Add(this.labelAnnoScadenza);
+			this.Controls.Add(this.textBoxAnnoScadenza);
+			this.Controls.Add(this.labelPriceProd);
+			this.Controls.Add(this.labelDescProd);
+			this.Controls.Add(this.labelCodiceProd);
+			this.Controls.Add(this.labelProdType);
+			this.Controls.Add(this.buttonAggiungi);
+			this.Controls.Add(this.listViewArticoli);
+			this.Controls.Add(this.textBoxPrezzo);
+			this.Controls.Add(this.textBoxDescrizione);
+			this.Controls.Add(this.textBoxCodice);
+			this.Controls.Add(this.radioButtonAlimentareFresco);
+			this.Controls.Add(this.radioButtonNonAlimentare);
+			this.Controls.Add(this.radioButtonAlimentare);
+			this.Controls.Add(this.panelTitleAdd);
+			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.Name = "FormAdd";
+			this.Text = "FormAdd";
+			this.panelTitleAdd.ResumeLayout(false);
+			this.panelTitleAdd.PerformLayout();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 

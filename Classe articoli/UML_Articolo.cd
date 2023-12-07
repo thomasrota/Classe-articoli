@@ -3,29 +3,36 @@
   <Class Name="Classe_articoli.Articolo">
     <Position X="6" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AhAAAAAAARQAAAAAgAAQAIAAAAAAQAAAIABAIAAAAQA=</HashCode>
+      <HashCode>AhAAAAAAARQAAAAEgAAQAAAAAAAAQAAAIABAIAAAAQA=</HashCode>
       <FileName>Articolo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Classe_articoli.ArticoloAlimentare">
-    <Position X="9" Y="5.25" Width="1.75" />
+    <Position X="9" Y="5.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAAgAAAAIAAAAAAQAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAAEgAAAAAAAAAAAQAAAAAAAAAQAAAA=</HashCode>
       <FileName>ArticoloAlimentare.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Classe_articoli.ArticoloNonAlimentare">
     <Position X="3.5" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAAgAAAAIAAAAgAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAAEgAAAAAAAAAgAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>ArticoloNonAlimentare.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Classe_articoli.ArticoloAlimentareFresco">
     <Position X="8.75" Y="9" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAAgAAAAIAAAAAAQAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAEgAAAAAAAAAAAQAACAAAAAAAAAAA=</HashCode>
       <FileName>ArticoloAlimentareFresco.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Classe_articoli.Scontrino">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAEAAAAAAACAAAAQAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Scontrino.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

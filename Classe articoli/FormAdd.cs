@@ -97,13 +97,10 @@ namespace Classe_articoli
 			{
 				if (articolo != null)
 				{
-					string[] c = articolo.newToString();
 					sconti[cont] = articolo.Sconto(fidelityCard);
 					cont++;
 				}
 			}
-			double coso = scontrino.Totale(fidelityCard);
-            MessageBox.Show(coso.ToString());
 			Visualizza();
 			for (int i = 0; i < sconti.Length; i++)
 				sum += sconti[i];
@@ -114,14 +111,32 @@ namespace Classe_articoli
 				MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (sort == DialogResult.Yes)
 			{
-				Articolo.Sort(articoli, true);
+				Sort(true);
 				Visualizza();
 			}
-			else
-				Articolo.Sort(articoli, false);
 		}
 
 		#region Funzioni
+		private void Sort( bool sYn)
+		{
+			int i = 0, j = 0;
+			Articolo temp = null;
+			while (articoli[i + 1] != null)
+			{
+				while (articoli[j + 1] != null)
+				{
+					if (articoli[j + 1].Compare(articoli[j]) == 1)
+					{
+						temp = articoli[j];
+						articoli[j] = articoli[j + 1];
+						articoli[j + 1] = temp;
+					}
+					j++;
+				}
+				j = 0;
+				i++;
+			}
+		}
 		// Metodo per creare un nuovo oggetto Articolo in base al tipo specificato
 		Articolo CreaArticolo(string tipo)
 		{
@@ -161,7 +176,7 @@ namespace Classe_articoli
 			{
 				if (articolo != null)
 				{
-					string[] c = articolo.newToString();
+					string[] c = (articolo.ToString().Split(';'));
 					string[] row = { c[0], c[1], c[2], c[3], c[4], c[5], c[6] };
 					var listViewItem = new ListViewItem(row);
 					listViewArticoli.Items.Add(listViewItem);

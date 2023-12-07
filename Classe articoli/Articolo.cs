@@ -65,36 +65,9 @@ namespace Classe_articoli
 
 			return ret;
 		}
-		public virtual string[] newToString()
+		public override string ToString()
 		{
-			return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", "-", "-", "-", ImportoScontato.ToString("F") + "€" };
-		}
-
-		public static Articolo[] Sort(Articolo[] toSort, bool sYn)
-		{
-			if (sYn)
-			{
-				int i = 0, j = 0;
-				Articolo temp = null;
-				while (toSort[i + 1] != null)
-				{
-					while (toSort[j + 1] != null)
-					{
-						if (toSort[j + 1].Compare(toSort[j]) == 1)
-						{
-							temp = toSort[j];
-							toSort[j] = toSort[j + 1];
-							toSort[j + 1] = temp;
-						}
-						j++;
-					}
-					j = 0;
-					i++;
-				}
-				return toSort;
-			}
-			else
-				return toSort;
+			return $"{Codice}; {Descrizione}; {Prezzo.ToString("F")}€; -; -; -; {ImportoScontato.ToString("F")}€";
 		}
 	}
 }

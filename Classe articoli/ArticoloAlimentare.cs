@@ -9,7 +9,7 @@ namespace Classe_articoli
 {
     public class ArticoloAlimentare : Articolo
     {
-        protected int annoScadenza;
+        protected int _annoScadenza;
 
         public ArticoloAlimentare(string codice, string descrizione, double prezzo, int scad) : base(codice, descrizione, prezzo)
         {
@@ -18,12 +18,12 @@ namespace Classe_articoli
 
         public int AnnoScadenza
         {
-            get { return annoScadenza; }
+            get { return _annoScadenza; }
             set
             {
                 if (value < DateTime.Now.Year)
                     MessageBox.Show("Anno scadenza non valido", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                annoScadenza = value;
+                _annoScadenza = value;
             }
         }
         public override bool Equals(object obj)
@@ -50,9 +50,9 @@ namespace Classe_articoli
                 base.Sconto(cartaFedelta);
             return ImportoScontato;
         }
-        public override string[] newToString()
+        public override string ToString()
         {
-            return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", AnnoScadenza.ToString(), "-", "-", ImportoScontato.ToString("F") + "€" };
-        }
-    }
+			return $"{Codice}; {Descrizione}; {Prezzo.ToString("F")}€; {AnnoScadenza}; -; -; {ImportoScontato.ToString("F")}€";
+		}
+	}
 }

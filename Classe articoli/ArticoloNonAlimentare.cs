@@ -40,9 +40,9 @@ namespace Classe_articoli
                 base.Sconto(cartaFedelta);
             return ImportoScontato;
         }
-        public override string[] newToString()
+        public override string ToString()
         {
-            return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", "-", (Riciclabile == true) ? "Sì" : "No", "-", ImportoScontato.ToString("F") + "€" };
-        }
+            return $"{Codice}; {Descrizione}; {Prezzo.ToString("F")}€; -; {Riciclabile}; -; {ImportoScontato.ToString("F")}€";
+		}
     }
 }

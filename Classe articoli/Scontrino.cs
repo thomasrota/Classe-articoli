@@ -49,9 +49,10 @@ namespace Classe_articoli
         public override string ToString()
         {
             string s = string.Empty;
-            for (int i = 0; i < Articolos.Length; i++)
+            foreach (var articolo in Articolos)
             {
-                s = Articolos[i].ToString() + '\n';
+	            if (articolo != null) 
+		            s += articolo.ToString() + '\n';
             }
             return s;
         }

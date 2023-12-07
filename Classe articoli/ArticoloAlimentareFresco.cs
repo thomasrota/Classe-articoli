@@ -51,9 +51,9 @@ namespace Classe_articoli
                 base.Sconto(cartaFedelta);
             return ImportoScontato;
         }
-        public override string[] newToString()
+        public override string ToString()
         {
-            return new string[] { Codice, Descrizione, Prezzo.ToString("F") + "€", AnnoScadenza.ToString(), "-", ConsumazioneDopoApertura.ToString(), ImportoScontato.ToString("F") + "€" };
-        }
+            return $"{Codice}; {Descrizione}; {Prezzo.ToString("F")}€; {AnnoScadenza}; -; {ConsumazioneDopoApertura}; {ImportoScontato.ToString("F")}€";
+		}
     }
 }

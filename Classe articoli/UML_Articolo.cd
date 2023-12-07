@@ -3,7 +3,7 @@
   <Class Name="Classe_articoli.Articolo">
     <Position X="6" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AhAAAAAAARQAAAAEgAAQAAAAAAAAQAAAIABAIAAAAQA=</HashCode>
+      <HashCode>AhAAAAAAARQAAAAEgAAAAAAAAAAAQAAAIABAIAAAAQA=</HashCode>
       <FileName>Articolo.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -19,22 +19,21 @@ namespace Classe_articoli
 		public bool isRiciclabile;
 		public bool fidelityCard;
 		public Articolo[] articoli;
-		public double[] sconti;
 		public Scontrino scontrino;
-
+		public string path;
 		public FormAdd()
 		{
 			InitializeComponent();
 			InitializeListView();
 			articoli = new Articolo[100];
-			sconti = new double[100];
 			scontrino = new Scontrino(articoli);
 			dim = 0;
 			buttonCalc.Enabled = true;
             ToolTip toolTip1 = new ToolTip();
 			toolTip1.ShowAlways = true;
 			toolTip1.SetToolTip(buttonCalc, "Calcola totale. Tasto cliccabile solamente una volta.");
-        }
+			path = @"scontrino.txt";
+		}
 
         private void buttonAggiungi_Click(object sender, EventArgs e)
 		{
@@ -85,27 +84,6 @@ namespace Classe_articoli
 		}
 		private void buttonCalc_Click(object sender, EventArgs e)
 		{
-			var result = MessageBox.Show("Ha la carta fedeltà?", "Fidelity Card",
-				MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			if (result == DialogResult.Yes)
-				fidelityCard = true;
-			else
-				fidelityCard = false;
-			int cont = 0;
-			double sum = 0;
-			foreach (Articolo articolo in articoli)
-			{
-				if (articolo != null)
-				{
-					sconti[cont] = articolo.Sconto(fidelityCard);
-					cont++;
-				}
-			}
-			Visualizza();
-			for (int i = 0; i < sconti.Length; i++)
-				sum += sconti[i];
-			MessageBox.Show("Importo totale: " + sum.ToString("F") + "€");
-			buttonCalc.Enabled = false;
 			Thread.Sleep(1000);
 			var sort = MessageBox.Show("Vuoi ordinare lo scontrino per ordine di prezzo?", "Ordinamento",
 				MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -114,6 +92,18 @@ namespace Classe_articoli
 				Sort(true);
 				Visualizza();
 			}
+			Thread.Sleep(500);
+			var result = MessageBox.Show("Ha la carta fedeltà?", "Fidelity Card",
+				MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (result == DialogResult.Yes)
+				fidelityCard = true;
+			else
+				fidelityCard = false;
+			Visualizza(); 
+			SalvaScontrino();
+			MessageBox.Show("Scontrino salvato in \"scontrino.txt\".", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show("Importo totale: " + scontrino.Totale(fidelityCard).ToString("F") + "€", "Spesa Totale", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			buttonCalc.Enabled = false;
 		}
 
 		#region Funzioni
@@ -136,6 +126,21 @@ namespace Classe_articoli
 				j = 0;
 				i++;
 			}
+		}
+
+		private void SalvaScontrino()
+		{
+			StreamWriter sw = new StreamWriter(path);
+			sw.WriteLine("Codice; Descrizione; Prezzo; Anno Scadenza; Riciclabile; Da consumarsi in (numero giorni); Importo scontato");
+			foreach (Articolo articolo in articoli)
+			{
+				if (articolo != null)
+				{
+					sw.WriteLine(articolo.ToString());
+				}
+			}
+			sw.WriteLine("\n\nTotale: " + scontrino.Totale(fidelityCard).ToString("F") + "€");
+			sw.Close();
 		}
 		// Metodo per creare un nuovo oggetto Articolo in base al tipo specificato
 		Articolo CreaArticolo(string tipo)

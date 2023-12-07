@@ -251,7 +251,7 @@
 			this.buttonCalc.Name = "buttonCalc";
 			this.buttonCalc.Size = new System.Drawing.Size(280, 46);
 			this.buttonCalc.TabIndex = 17;
-			this.buttonCalc.Text = "Calcola Spesa Totale";
+			this.buttonCalc.Text = "Calcola Spesa Totale e Salva Scontrino";
 			this.buttonCalc.UseVisualStyleBackColor = true;
 			this.buttonCalc.Click += new System.EventHandler(this.buttonCalc_Click);
 			// 

@@ -37,13 +37,12 @@ namespace Classe_articoli
         }
         public double Totale(bool fidelityCard)
         {
-            double[] prices = new double[Articolos.Length]; 
             double tot = 0;
-            for (int i = 0;i < Articolos.Length; i++)
+            foreach (var articolo in Articolos)
             {
-                prices[i] = Articolos[i].Sconto(fidelityCard);
-                tot += prices[i];
-            }
+	            if (articolo != null) 
+		            tot += articolo.Sconto(fidelityCard);
+			}
             return tot;
         }
         public override string ToString()

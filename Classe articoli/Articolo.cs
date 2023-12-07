@@ -41,7 +41,6 @@ namespace Classe_articoli
 			}
 			return false;
 		}
-
 		public virtual double Sconto(bool cartaFedelta)
 		{
 			if (cartaFedelta)

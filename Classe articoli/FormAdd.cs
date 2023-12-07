@@ -20,6 +20,7 @@ namespace Classe_articoli
 		public bool fidelityCard;
 		public Articolo[] articoli;
 		public double[] sconti;
+		public Scontrino scontrino;
 
 		public FormAdd()
 		{
@@ -27,6 +28,7 @@ namespace Classe_articoli
 			InitializeListView();
 			articoli = new Articolo[100];
 			sconti = new double[100];
+			scontrino = new Scontrino(articoli);
 			dim = 0;
 			buttonCalc.Enabled = true;
             ToolTip toolTip1 = new ToolTip();
@@ -36,28 +38,23 @@ namespace Classe_articoli
 
         private void buttonAggiungi_Click(object sender, EventArgs e)
 		{
-			if (dim < 100)
+			Articolo nuovoArticolo = CreaArticolo(Selection());
+			if (CheckInputLengths(textBoxCodice.Text) == 1)
 			{
-				Articolo nuovoArticolo = CreaArticolo(Selection());
-				if (CheckInputLengths(textBoxCodice.Text) == 1)
+				if (RicercaArticolo(textBoxCodice.Text) == -1)
 				{
-					if (RicercaArticolo(textBoxCodice.Text) == -1)
-					{
-						articoli[dim] = nuovoArticolo;
-						Visualizza();
-						dim++;
-						ClearRadioButtons();
-						RemoveAddedTextboxes();
-						UpdateInputs();
-					}
-					else
-						MessageBox.Show("Articolo già presente", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					scontrino.Aggiunta(dim, nuovoArticolo);
+					Visualizza();
+					dim++;
+					ClearRadioButtons();
+					RemoveAddedTextboxes();
+					UpdateInputs();
 				}
 				else
-					MessageBox.Show("La lunghezza del codice deve essere di 4 caratteri", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Articolo già presente", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			if (dim > 100)
-				MessageBox.Show("Limite massimo prodotti raggiunto", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			else
+				MessageBox.Show("La lunghezza del codice deve essere di 4 caratteri", "Errore!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
 		private void radioButtonAlimentare_CheckedChanged(object sender, EventArgs e)
@@ -105,6 +102,8 @@ namespace Classe_articoli
 					cont++;
 				}
 			}
+			double coso = scontrino.Totale(fidelityCard);
+            MessageBox.Show(coso.ToString());
 			Visualizza();
 			for (int i = 0; i < sconti.Length; i++)
 				sum += sconti[i];

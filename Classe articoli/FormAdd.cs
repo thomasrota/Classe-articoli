@@ -89,7 +89,7 @@ namespace Classe_articoli
 				MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (sort == DialogResult.Yes)
 			{
-				Sort(true);
+				Sort();
 				Visualizza();
 			}
 			Thread.Sleep(500);
@@ -107,7 +107,7 @@ namespace Classe_articoli
 		}
 
 		#region Funzioni
-		private void Sort( bool sYn)
+		private void Sort()
 		{
 			int i = 0, j = 0;
 			Articolo temp = null;
